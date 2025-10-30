@@ -63,11 +63,6 @@
                             ${activity.participants.length ? activity.participants.map(email => `<li>${email}</li>`).join('') : `<li class="no-participants">No participants yet</li>`}
                         </ul>
                     </div>
-
-                    <div class="signup-form">
-                        <input type="email" placeholder="Enter your school email" class="email-input" />
-                        <button onclick="signUp('${name}', this.parentElement.querySelector('.email-input').value)">Sign Up</button>
-                    </div>
                 </div>
             `;
       }
