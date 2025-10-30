@@ -1,3 +1,21 @@
+function createActivityCard(activity, name) {
+  return `
+    <div class="activity-card">
+      <h2>${escapeHtml(name)}</h2>
+      <p class="activity-desc">${escapeHtml(activity.description)}</p>
+      <p class="activity-schedule"><strong>Schedule:</strong> ${escapeHtml(activity.schedule)}</p>
+      <p class="activity-spots"><strong>Available Spots:</strong> ${activity.max_participants - activity.participants.length} / ${activity.max_participants}</p>
+
+      <div class="participants-section">
+        <p class="participants-header">Current Participants</p>
+        <ul class="participants-list">
+          ${activity.participants.length ? activity.participants.map(email => `<li>${escapeHtml(email)}</li>`).join('') : `<li class="no-participants">No participants yet</li>`}
+        </ul>
+      </div>
+    </div>
+  `;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   loadActivities();
   setupSignupForm();
