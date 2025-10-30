@@ -57,12 +57,22 @@ section h3 {
   color: #1a237e;
 }
 
+/* Basic card layout */
 .activity-card {
-  margin-bottom: 15px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  max-width: 720px;
+}
+
+/* Headings and text */
+.activity-card h2 {
+  margin: 0 0 6px;
+  font-size: 1.25rem;
+  color: #1f2937;
 }
 
 .activity-card h4 {
@@ -70,8 +80,73 @@ section h3 {
   color: #0066cc;
 }
 
+.activity-desc {
+  margin: 6px 0;
+  color: #374151;
+}
+
 .activity-card p {
   margin-bottom: 8px;
+}
+
+/* Participants section */
+.participants-section {
+  margin-top: 12px;
+  background: #f9fafb;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #f1f5f9;
+}
+
+.participants-header {
+  margin: 0 0 8px;
+  font-weight: 600;
+  color: #111827;
+  font-size: 0.95rem;
+}
+
+.participants-list {
+  margin: 0;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 0.92rem;
+}
+
+.participants-list li {
+  margin-bottom: 4px;
+}
+
+.no-participants {
+  list-style: none;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* Signup form */
+.signup-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.signup-form .email-input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+.signup-form button {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.signup-form button:hover {
+  background: #1e40af;
 }
 
 .form-group {

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mergington High School Activities</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* ...existing styles... */
+    </style>
   </head>
   <body>
     <header>
@@ -44,6 +47,33 @@
     <footer>
       <p>&copy; 2023 Mergington High School</p>
     </footer>
+
+    <script>
+      function createActivityCard(activity, name) {
+        return `
+                <div class="activity-card">
+                    <h2>${name}</h2>
+                    <p class="activity-desc">${activity.description}</p>
+                    <p class="activity-schedule"><strong>Schedule:</strong> ${activity.schedule}</p>
+                    <p class="activity-spots"><strong>Available Spots:</strong> ${activity.max_participants - activity.participants.length} / ${activity.max_participants}</p>
+
+                    <div class="participants-section">
+                        <p class="participants-header">Current Participants</p>
+                        <ul class="participants-list">
+                            ${activity.participants.length ? activity.participants.map(email => `<li>${email}</li>`).join('') : `<li class="no-participants">No participants yet</li>`}
+                        </ul>
+                    </div>
+
+                    <div class="signup-form">
+                        <input type="email" placeholder="Enter your school email" class="email-input" />
+                        <button onclick="signUp('${name}', this.parentElement.querySelector('.email-input').value)">Sign Up</button>
+                    </div>
+                </div>
+            `;
+      }
+
+      // ...existing code...
+    </script>
 
     <script src="app.js"></script>
   </body>
